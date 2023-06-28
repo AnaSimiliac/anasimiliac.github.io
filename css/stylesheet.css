@@ -27,11 +27,11 @@ body {
 }
 
 .contentMe strong{
-  font-size: 300%;
+  font-size: 400%;
 }
 
 .contentMe .intro{
-  font-size: 200%;
+  font-size: 300%;
   padding-top: 20%;
   display: flex;
   flex-direction: column;
@@ -54,11 +54,11 @@ body {
 }
 
 .contentWork h1{
-  font-size: 120%;
+  font-size: 200%;
 }
 
 .contentWork p{
-  font-size: 70%;
+  font-size: 100%;
 }
 
 
@@ -80,7 +80,7 @@ body {
 
 .footer-button {
   color: #ffffff;
-  font-size: 50px;
+  font-size: 25px;
   margin-bottom: 10px;
   text-decoration: none;
 }
@@ -91,7 +91,7 @@ body {
 
 .all h2{
   text-align: center;
-  font-size: 100%;
+  font-size: 150%;
   color: rgb(172, 18, 18);
   justify-content: center;
   padding-left: 40%;
@@ -118,13 +118,13 @@ body {
   font-weight: bold;
   background-color: rgb(218, 217, 217);
   font-family: 'Big Shoulders Stencil Display', cursive;
-  font-size: 150%;
+  font-size: 300%;
 }
 
 .button-content {
   display: none;
   padding: 20px;
-  font-size: 70%;
+  font-size: 50%;
   
 }
 
@@ -139,7 +139,7 @@ body {
 }
 
 .contentWork h1{
-  font-size: 450%;
+  font-size: 400%;
 }
 
 .contentWork h2{
@@ -147,12 +147,12 @@ body {
 }
 
 .contentWork h4{
-  font-size: 100%;
+  font-size: 150%;
 }
 
 
 .footer-link{
-  font-size: 100%;
+  font-size: 200%;
   font-family: 'Big Shoulders Stencil Display', cursive;
   color: #fff;
   text-decoration-line: none;
@@ -161,14 +161,14 @@ body {
 
 .line {
   position: relative;
-  width: 40px;
-  height: 200px;
+  width: 20px;
+  height: 100px;
   
   background-image: linear-gradient(to bottom, #000 0%, #9f9f9f 60%, #d3d3d3 60%, #ffffff 100%);
   background-size: 100% 20px;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 20%;
+  border-radius: 10%;
   animation: lineAnimation 6s linear infinite;
 }
 
