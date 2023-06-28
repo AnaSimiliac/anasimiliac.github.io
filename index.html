@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="MainPage">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Ana-Maria Similiac</title>
+        <link rel="stylesheet" href="./css/stylesheet.css" />
+    </head>
+<body>
+  <div class="contentMe">
+    <strong><h1>Ana-Maria Similiac</h1></strong>
+    <div class="intro">
+    <h2 >Student of the Saxion University of Applied Science</h1>
+    <p id="scrollText">Following the path of a UX designer</p>
+    </div>
+</div> 
+<div class="contentWork" id="contentWork">
+  <h1>Univeristy Courses</h1>
+  <button class="button" onclick="toggleContent(0)">Imagery</button>
+  <div class="button-content">
+    <img src="./image/Ana_Similiac_Poster.jpg" alt="Poster" style="width: 60%;">
+    <h2>By applying the basic prciples of Graphic Design I created a poster that brings awarness of the Domestic Abuse victims </h2>
+  </div>
+
+  <button class="button" onclick="toggleContent(1)">UI/UX</button>
+  <div class="button-content">
+    <h2>During this course we had to recreate the HUD of a FPS game and a webpage layout. By applying both basic of Graphic Priciples and the Design Thinking method I recreate two prototypes that satisfy the needs of the user.</h2>
+    <img src="./image/Crisis 3.png" alt="crisis" style="width: 80%;">
+    <h4>Crisis 3 Remade HUD</h4>
+    <img src="./image/Metrorex.png" alt="crisis" style="width: 80%;">
+    <h4>Metrorex Webpage Remade</h4>
+  </div>
+
+  <button class="button" onclick="toggleContent(2)">Web</button>
+  <div class="button-content">
+    <h2>During this course I created a webpage using HTML and CSS.</h2>
+    <img src="./image/Screenshot 2023-06-27 142758.png" alt="web" style="width: 80%;">
+    <img src="./image/Screenshot 2023-06-27 142702.png" alt="web" style="width: 80%;">
+  </div>
+
+  <button class="button" onclick="toggleContent(3)">Behaviorism</button>
+  <div class="button-content">
+    <h2>During this course I created a prototype for an phone app that has the purpose to bring more awarness to the animal wellfare .</h2>
+    <img src="./image/Screenshot 2023-06-27 143516.png" alt="behavirosim" style="width: 80%;">
+    
+  </div>
+
+  <h1>University Projects</h1>
+  <button class="button" onclick="toggleContent(4)">Barn Balls</button>
+ <div class="button-content">
+   <h2> During this project I was mainly in charge of the UI/UX, Webpage and the One pager. Using my past experinces and skill I came with these final products even if the project took just one week. </h2>
+   <img src="./image/Screenshot 2023-06-27 144858.png" alt="4thProject" style="width: 80%;">
+   <img src="./image/Screenshot 2023-06-27 144918.png" alt="4thProject" style="width: 80%;">
+   <img src="./image/One Pager.jpg" alt="4thProject" style="width: 80%;">
+   
+ </div>
+
+  <!-- Add more buttons and content as needed -->
+</div>
+   
+  
+  
+  
+  
+  
+  
+
+<footer class="footer">
+  <a href="https://www.linkedin.com/in/ana-similiac-5b68ab21a/" class="footer-button" target="_blank"><i class="fa fa-linkedin"></i></a>
+  <a href="mailto:anasimiliac@eyahoo.com" class="footer-button"><i class="fa fa-envelope"></i></a>
+
+  <div class="line"></div>
+
+  <a href="#contentWork" class="footer-button" id="workButton" onclick="scrollToSection(event)">WORK</a>
+</footer>
+
+
+
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var body = document.querySelector('body');
+            var scrollPosition = window.scrollY;
+
+            if (scrollPosition > 2500) {
+                body.classList.add('light-grey');
+            } else {
+                body.classList.remove('light-grey');
+            }
+
+            
+        });
+
+
+        window.addEventListener("scroll", function() {
+    var element = document.getElementById("scrollText");
+    var opacity = 1 - window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    var color = "rgb(255, 0, 0)"; // Lighter red color (RGB value: 255, 0, 0)
+
+    element.style.opacity = opacity.toFixed(2);
+    element.style.color = color;
+});
+
+
+
+
+// Ease-out function
+function easeOut(progress) {
+  return 1 - Math.pow(1 - progress, 3);
+}
+
+
+function toggleContent(contentIndex) {
+  var buttons = document.getElementsByClassName('button');
+  var contents = document.getElementsByClassName('button-content');
+
+  if (buttons[contentIndex].classList.contains('active')) {
+    buttons[contentIndex].classList.remove('active');
+    contents[contentIndex].classList.remove('active');
+  } else {
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('active');
+      contents[i].classList.remove('active');
+    }
+
+    buttons[contentIndex].classList.add('active');
+    contents[contentIndex].classList.add('active');
+  }
+}
+
+
+
+  function scrollToContentWork(event) {
+    event.preventDefault();
+    var contentWork = document.querySelector('.contentWork');
+    contentWork.scrollIntoView({ behavior: 'smooth' });
+  }
+
+
+
+  window.addEventListener('scroll', function() {
+  var body = document.querySelector('body');
+  var scrollPosition = window.scrollY;
+  var contentWork = document.querySelector('.contentWork');
+
+  if (scrollPosition > 2500 || contentWork.getBoundingClientRect().top <= 0) {
+    body.classList.add('light-grey');
+    document.querySelector('.line').style.display = 'none';
+  } else {
+    body.classList.remove('light-grey');
+    document.querySelector('.line').style.display = 'block';
+  }
+});
+
+
+var lastScrollPosition = 0;
+
+window.addEventListener('scroll', function() {
+  var currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Show or hide the "WORK" button based on scroll direction and position
+  var workButton = document.getElementById('workButton');
+  var contentWork = document.getElementById('contentWork');
+  if (workButton && contentWork) {
+    if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 100) {
+      workButton.classList.remove('visible');
+    } else if (currentScrollPosition < lastScrollPosition && !contentWork.classList.contains('visible')) {
+      workButton.classList.add('visible');
+    }
+  }
+
+  lastScrollPosition = currentScrollPosition;
+});
+
+
+
+
+
+    </script>
+</body>
+</html>
