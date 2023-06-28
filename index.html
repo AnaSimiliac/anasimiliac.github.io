@@ -20,8 +20,9 @@
   <h1>Univeristy Courses</h1>
   <button class="button" onclick="toggleContent(0)">Imagery</button>
   <div class="button-content">
-    <img src="./image/Ana_Similiac_Poster.jpg" alt="Poster" style="width: 60%;">
     <h2>By applying the basic prciples of Graphic Design I created a poster that brings awarness of the Domestic Abuse victims </h2>
+    <img src="./image/Ana_Similiac_Poster.jpg" alt="Poster" style="width: 60%;">
+    
   </div>
 
   <button class="button" onclick="toggleContent(1)">UI/UX</button>
@@ -84,7 +85,7 @@
             var body = document.querySelector('body');
             var scrollPosition = window.scrollY;
 
-            if (scrollPosition > 2500) {
+            if (scrollPosition > 600) {
                 body.classList.add('light-grey');
             } else {
                 body.classList.remove('light-grey');
@@ -164,7 +165,7 @@ window.addEventListener('scroll', function() {
   var workButton = document.getElementById('workButton');
   var contentWork = document.getElementById('contentWork');
   if (workButton && contentWork) {
-    if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 100) {
+    if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 1000) {
       workButton.classList.remove('visible');
     } else if (currentScrollPosition < lastScrollPosition && !contentWork.classList.contains('visible')) {
       workButton.classList.add('visible');
