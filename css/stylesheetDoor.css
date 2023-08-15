@@ -1,0 +1,127 @@
+/* Styles for the shaded section */
+.shaded-section {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8%;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+    transition: width 0.5s ease;
+    transform: skewX(0deg);
+  }
+  
+  /* Oblique lines on the shaded section */
+  .oblique-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.1) 50%, transparent 50%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1));
+    background-size: 20px 20px;
+    transform: skewX(0deg);
+  }
+  
+  /* Styles for the content container */
+  .content-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: rgba(65, 65, 65, 0.9);
+    transform: skewX(-20deg);
+    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .content-container h3 {
+    transform: rotate(270deg); /* Rotate the text */
+    color: #ffb300;
+    font-size: 200%;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide any overflowing text */
+    
+  }
+  
+  
+  /* Show content container on hover */
+  .shaded-section:hover .content-container {
+    transform: skewX(0deg);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+
+
+
+
+
+
+
+
+  /* Styles for the shaded section */
+.shaded-section1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 7%;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+    transition: width 0.5s ease;
+    transform: skewX(0deg);
+    transition: right 0.5s ease-in-out; /* Add sliding animation transition */
+  }
+  
+  /* Oblique lines on the shaded section */
+  .oblique-lines1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.1) 50%, transparent 50%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1));
+    background-size: 20px 20px;
+    transform: skewX(0deg);
+  }
+  
+  /* Styles for the content container */
+  .content-container1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: rgba(65, 65, 65, 0.9);
+    transform: skewX(-20deg);
+    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .content-container1 h3 {
+    transform: rotate(270deg); /* Rotate the text */
+    color: #ffb300;
+    font-size: 200%;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide any overflowing text */
+    
+  }
+  
+  
+  /* Show content container on hover */
+  .shaded-section1:hover .content-container1 {
+    transform: skewX(0deg);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  

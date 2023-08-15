@@ -1,202 +1,126 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display&display=swap');
-
-body {
+/* Reset default margin and padding */
+@import url('https://fonts.cdnfonts.com/css/darbots-2');
+body, html {
     margin: 0;
     padding: 0;
     background-color: black;
-    transition: background-color 1s;
-    height: 1000px;
-    font-family: 'Big Shoulders Stencil Display', cursive;
 }
 
-#scrollText {
-  opacity: 0;
-  color: black;
-  transition: opacity 0.5s ease-in-out, color 0.5s ease-in-out;
-  font-size: 100%;
+/* Set the video container to cover the entire viewport */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Move the video behind the content */
+}
+
+/* Style the video element */
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.content {
+    position: fixed;
+    top: 20%;
+    left: 5%;
+    right: 5%;
+    width: auto;
+    background-color: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2; /* Ensure the content stays above the video */
+    font-family: 'Darbots', sans-serif;
+    font-size: 130%;
 }
 
 
-
-.contentMe{
-  padding: 20% 5%;
-  font-family: 'Big Shoulders Stencil Display', cursive;
-  color: #fff;
-  
+.content p {
+    
+    text-shadow:0 0 5px #2b2b2b, 5px 5px 5px #8c4800;
 }
 
-.contentMe strong{
-  font-size: 400%;
-}
-
-.contentMe .intro{
-  font-size: 300%;
-  padding-top: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  height: auto;
-  padding-right: 5%;
-  font-family: 'Big Shoulders Stencil Display', cursive;
-  text-align: right;
-}
-
-.contentWork{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  font-family: 'Big Shoulders Stencil Display', cursive;
-  text-align: left;
-  padding-left: 10% ;
-}
-
-.contentWork h1{
-  font-size: 200%;
-}
-
-.contentWork p{
-  font-size: 100%;
+.content h1 {
+    font-size: 400%; /* Adjust the font size as needed */
+    
 }
 
 
 
-.light-grey {
-    background-color: rgb(218, 217, 217);
+/*arrow */
+/* Style for the arrow container */
+.arrow-container {
+  position: fixed;
+  bottom: 10px; /* Adjust the position as needed */
+  left: 48.7%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+
+/* Keyframes animation for the bouncing arrow */
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px); /* Adjust bounce height as needed */
+  }
+}
+
+/* Styling for the arrow icon */
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 30px solid rgba(255, 255, 255, 0.95); /* Same color as .content background */
+  margin: 0 auto;
+}
+
+@keyframes textVideo {
+    from {
+        background-position: 0% 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+
 }
 
 .footer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: transparent;
-  padding: 20px;
-}
-
-.footer-button {
-  color: #ffffff;
-  font-size: 25px;
-  margin-bottom: 10px;
-  text-decoration: none;
-}
-
-.footer-button:last-child {
-  margin-bottom: 0;
-}
-
-.all h2{
-  text-align: center;
-  font-size: 150%;
-  color: rgb(172, 18, 18);
-  justify-content: center;
-  padding-left: 40%;
-}
-
-
-
-
-
-.contentWork {
-  margin-top: 20px;
-  text-align: center;
-  padding-top: 10%;
-  color: #000000;
-}
-
-.button {
-  padding: 10px 20px;
-  color: #000000;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  margin-bottom: 10px;
-  font-weight: bold;
-  background-color: rgb(218, 217, 217);
-  font-family: 'Big Shoulders Stencil Display', cursive;
-  font-size: 300%;
-}
-
-.button-content {
-  display: none;
-  padding: 20px;
-  font-size: 50%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: transparent;
+    padding: 20px;
+    z-index: 1;
+  }
   
-}
-
-.button.active {
-  color: rgb(0, 0, 0);
- 
+  .footer-button {
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
   
-}
-
-.button.active + .button-content {
-  display: block;
-}
-
-.contentWork h1{
-  font-size: 400%;
-}
-
-.contentWork h2{
-  font-size: 400%;
-}
-
-.contentWork h4{
-  font-size: 250%;
-}
-
-
-.footer-link{
-  font-size: 200%;
-  font-family: 'Big Shoulders Stencil Display', cursive;
-  color: #fff;
-  text-decoration-line: none;
-
-}
-
-.line {
-  position: relative;
-  width: 20px;
-  height: 100px;
   
-  background-image: linear-gradient(to bottom, #000 0%, #9f9f9f 60%, #d3d3d3 60%, #ffffff 100%);
-  background-size: 100% 20px;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 10%;
-  animation: lineAnimation 6s linear infinite;
-}
 
-@keyframes lineAnimation {
-  0% {
-    background-position: center top;
-  }
-  50% {
-    background-position: center bottom;
-  }
-  51% {
-    background-position: center top;
-  }
-  100% {
-    background-position: center bottom;
-  }
-}
-
-
-
-#workButton {
-  display: none;
-}
-
-#workButton.visible {
-  display: inline-block;
-}
-
+  
 
 
 
